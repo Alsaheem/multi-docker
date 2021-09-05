@@ -17,8 +17,8 @@ after_success:
   # login to docker
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --password-stdin
   #push images to dockerhub
-  - docker-push alsaheem/multi-docker-client
-  - docker-push alsaheem/multi-docker-nginx
-  - docker-push alsaheem/multi-docker-server
-  - docker-push alsaheem/multi-docker-worker
+  - docker push alsaheem/multi-docker-client
+  - docker push alsaheem/multi-docker-nginx
+  - docker push alsaheem/multi-docker-server
+  - docker push alsaheem/multi-docker-worker
 
