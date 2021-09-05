@@ -1,0 +1,19 @@
+FROM node:alpine
+
+# navigate to the directory where the app is located
+
+WORKDIR /usr/app
+
+# copy everything from current co-working dir of your pc to current working dir oc container
+COPY --chown=node:node package.json ./
+
+# Step 2: Download and install dependency
+
+RUN npm install
+
+
+COPY --chown=node:node ./ ./
+
+# Step 3: Tell the image what to do when it starts as container
+
+CMD ["npm" , "run" , "start"]

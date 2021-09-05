@@ -1,0 +1,18 @@
+FROM node:14.14.0-alpine
+
+# navigate to the directory where the app is located
+
+WORKDIR /usr/app
+
+COPY ./package.json ./
+
+# Step 2: Download and install dependency
+
+RUN npm install
+
+# copy everything from current cowking dir of your pc to current working dir oc container
+COPY ./ ./
+
+# Step 3: Tell the image what to do when it starts as container
+
+CMD ["npm" ,"run", "start"]
