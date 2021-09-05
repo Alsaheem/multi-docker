@@ -13,7 +13,7 @@ after_success:
   - docker build -t alsaheem/multi-docker-client ./client
   - docker build -t alsaheem/multi-docker-nginx ./nginx
   - docker build -t alsaheem/multi-docker-server ./server
-  - docker build -t alsaheem/multi-worker-server ./worker
+  - docker build -t alsaheem/multi-docker-worker ./worker
   # login to docker
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --password-stdin
   #push images to dockerhub
